@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ensure background video plays (bypasses potential mobile restrictions on pre-interaction autoplay)
     const heroVideo = document.querySelector('.hero-bg-video');
     if (heroVideo) {
+      heroVideo.muted = true;
       heroVideo.play().catch(err => console.log('Video play error:', err));
     }
 
@@ -35,11 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
     startIndianRagaMusic();
   }
 
+  // Pre-trigger video autoplay on load
+  const heroVideoInitial = document.querySelector('.hero-bg-video');
+  if (heroVideoInitial) {
+    heroVideoInitial.muted = true;
+    heroVideoInitial.play().catch(() => {});
+  }
+
   if (doorOverlay) doorOverlay.addEventListener('click', openRoyalDoor);
   if (doorSealBtn) doorSealBtn.addEventListener('click', openRoyalDoor);
 
   // 2. LIVE COUNTDOWN TIMER
-  const destination = new Date('2026-11-28T16:00:00').getTime();
+  const destination = new Date('2026-11-23T11:00:00').getTime();
 
   function updateCountdown() {
     const now = new Date().getTime();
@@ -480,49 +488,49 @@ document.addEventListener('DOMContentLoaded', () => {
     eng: {
       mantra: "|| Shree Ganeshay Namah ||",
       subtitle: "The Wedding Celebration of",
-      groom: "Aarav",
-      bride: "Anika",
+      groom: "Shagun",
+      bride: "Chakshu",
       weds: "weds",
-      date: "Saturday, November 28, 2026",
-      venue: "at The Oberoi Udaivilas, Udaipur",
-      countdownTitle: "SAVE THE DATE",
+      date: "Monday, Nov 23 - Thursday, Nov 26, 2026",
+      venue: "Village Diyada, Tehsil Dehra, Kangra (H.P.)",
+      countdownTitle: "THE CELEBRATION BEGINS",
       days: "DAYS",
       hours: "HOURS",
       mins: "MINUTES",
       secs: "SECONDS",
-      eventsTitle: "Events Schedule",
+      eventsTitle: "Sacred Ceremonies",
       hostsTitle: "With Blessings",
       hostsSub: "WITH THE BLESSINGS OF OUR ELDERS",
       hostsWelcomed: "Warmly Welcomed By",
-      hostsFamilies: "The Arora Family",
+      hostsFamilies: "Thakur Family",
       hostsGroomSide: "Groom's Family",
       hostsBrideSide: "Bride's Family",
-      hostsBottomNote: '"Kindly join us to celebrate the auspicious Anand Karaj of our children."',
+      hostsBottomNote: '"Kindly join us to celebrate the auspicious wedding ceremony of our children."',
       venueTitle: "Where We Celebrate",
       directionsBtn: "Get Directions",
       footerText: "WITH LOVE & BLESSINGS"
     },
     hin: {
       mantra: "|| श्री गणेशाय नमः ||",
-      subtitle: "के पावन विवाह समारोह",
-      groom: "आरव",
-      bride: "अनिका",
+      subtitle: "शुभ विवाह समारोह",
+      groom: "शगुन",
+      bride: "चक्षु",
       weds: "संग",
-      date: "शनिवार, 28 नवंबर 2026",
-      venue: "द ओबेरॉय उदयविलास, उदयपुर में",
+      date: "23 से 26 नवम्बर 2026",
+      venue: "गांव दियाड़ा, देहरा, जिला कांगड़ा (हि०प्र०)",
       countdownTitle: "शुभ विवाह तिथि",
       days: "दिन",
       hours: "घंटे",
       mins: "मिनट",
       secs: "सेकंड",
-      eventsTitle: "कार्यक्रम सूची",
+      eventsTitle: "वैवाहिक कार्यक्रम",
       hostsTitle: "शुभ आशीर्वाद",
       hostsSub: "पूज्य बुजुर्गों के आशीर्वाद से",
-      hostsWelcomed: "दर्शनाभिलाषी",
-      hostsFamilies: "अरोड़ा परिवार",
+      hostsWelcomed: "स्वागतकर्ता",
+      hostsFamilies: "समस्त ठाकुर परिवार",
       hostsGroomSide: "वर पक्ष",
       hostsBrideSide: "वधू पक्ष",
-      hostsBottomNote: '"हमारे बच्चों के आनंद कारज के शुभ अवसर पर आपका सादर निमंत्रण है।"',
+      hostsBottomNote: '"हमारे बच्चों के शुभ विवाह के पावन अवसर पर आपका सादर निमंत्रण है।"',
       venueTitle: "उत्सव स्थल",
       directionsBtn: "दिशा-निर्देश",
       footerText: "स्नेह एवं आदर सहित"
