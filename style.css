@@ -321,54 +321,96 @@ body.is-revealed .hero-anim-btn {
 }
 
 /* DYNAMIC VIEWPORT HEIGHT (100dvh) FOR SAFARI & CHROME ADDRESS BAR FIT */
+/* PERFECT FOCAL SKY CENTERING SYSTEM FOR HERO SECTION */
 .hero-section {
   height: 100vh;
   height: 100dvh;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* OPTIMIZED LAYOUT FIT FOR ALL MOBILE PHONES (IPHONE 13/14/SE & ANDROID) */
-@media (max-width: 640px) {
+/* Mobile & Tablet Sky Alignment */
+@media (max-width: 768px) {
   .hero-section {
-    padding-top: max(1.25rem, env(safe-area-inset-top)) !important;
-    padding-bottom: 2rem !important;
-    justify-content: flex-start !important;
+    padding-top: max(1rem, env(safe-area-inset-top)) !important;
+    padding-bottom: 26vh !important; /* Excludes bottom dome art & shifts content higher */
+    justify-content: center !important;
   }
 
   .hero-container {
-    transform: translateY(0) !important;
-    margin-top: 0.5rem !important;
+    transform: translateY(-12px) !important;
+    margin: auto 0 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .royal-gold-frame {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .hero-anim-mantra {
+    font-size: 11px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .hero-anim-sub {
+    font-size: 11px !important;
+    margin-bottom: 6px !important;
   }
 
   .hero-title-main {
-    font-size: 2.75rem !important;
+    font-size: 3.25rem !important;
     line-height: 1.05 !important;
   }
 
   .hero-title-weds {
-    font-size: 2rem !important;
-    margin-top: -0.2rem !important;
-    margin-bottom: -0.2rem !important;
+    font-size: 2.2rem !important;
+    margin-top: -0.25rem !important;
+    margin-bottom: -0.25rem !important;
   }
 }
 
-@media (max-height: 720px) and (max-width: 640px) {
+/* Short Mobile Screens (< 680px viewport height) */
+@media (max-height: 680px) and (max-width: 768px) {
   .hero-section {
-    padding-top: max(1rem, env(safe-area-inset-top)) !important;
-    padding-bottom: 1.5rem !important;
+    padding-top: max(0.5rem, env(safe-area-inset-top)) !important;
+    padding-bottom: 21vh !important;
   }
 
   .hero-container {
-    margin-top: 0.25rem !important;
+    transform: translateY(-8px) !important;
+  }
+
+  .royal-gold-frame {
+    width: 72px !important;
+    height: 72px !important;
   }
 
   .hero-title-main {
-    font-size: 2.5rem !important;
+    font-size: 2.75rem !important;
   }
 
   .hero-title-weds {
-    font-size: 1.85rem !important;
+    font-size: 1.9rem !important;
+  }
+}
+
+/* Desktop & Laptop Fine-Tuning (> 768px width) */
+@media (min-width: 769px) {
+  .hero-section {
+    padding-top: max(1.5rem, env(safe-area-inset-top)) !important;
+    padding-bottom: 28vh !important;
+    justify-content: center !important;
+  }
+
+  .hero-container {
+    transform: translateY(-16px) !important;
+    margin: auto 0 !important;
   }
 }
 
