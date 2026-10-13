@@ -14,6 +14,11 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="assets/logo.png" />
 
+  <!-- Preload Critical Above-The-Fold Assets -->
+  <link rel="preload" as="image" href="assets/envolp2.webp" type="image/webp" />
+  <link rel="preload" as="image" href="assets/groom.webp?v=6.0" type="image/webp" />
+  <link rel="preload" as="image" href="assets/bride.webp?v=6.0" type="image/webp" />
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,7 +61,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="style.css?v=4.2" />
+  <link rel="stylesheet" href="style.css?v=5.0" />
 </head>
 <body class="bg-ivory-100 text-charcoal font-sans antialiased overflow-x-hidden">
 
@@ -64,7 +69,10 @@
   <div id="door-overlay" class="door-overlay flex flex-col items-center justify-center px-4">
     <!-- Background Image -->
     <div class="absolute inset-0 z-0 pointer-events-none">
-      <img src="assets/open2.jpg" alt="Opening Background" class="w-full h-full object-cover" />
+      <picture>
+        <source srcset="assets/open2.webp" type="image/webp" />
+        <img src="assets/open2.jpg" alt="Opening Background" class="w-full h-full object-cover" />
+      </picture>
       <div class="absolute inset-0 bg-white/10"></div>
     </div>
 
@@ -82,7 +90,10 @@
       <div id="door-seal-btn" class="relative cursor-pointer transition-all duration-500 hover:scale-105 active:scale-95 group envelope-wrapper opacity-0 scale-90 duration-1000">
         <!-- Shine effect on hover -->
         <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 opacity-0 group-hover:opacity-30 blur-md transition duration-500"></div>
-        <img src="assets/envolp2.png" alt="Royal Envelope" class="relative w-[280px] sm:w-[380px] h-auto object-contain drop-shadow-3xl filter brightness-105" />
+        <picture>
+          <source srcset="assets/envolp2.webp" type="image/webp" />
+          <img src="assets/envolp2.png" alt="Royal Envelope" class="relative w-[280px] sm:w-[380px] h-auto object-contain drop-shadow-3xl filter brightness-105" />
+        </picture>
       </div>
 
       <!-- Bottom Tap to Open Text -->
@@ -271,7 +282,10 @@
     <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hero-bg-anim">
       <video id="hero-bg-video" class="hero-bg-video w-full h-full object-cover object-center" autoplay loop muted playsinline preload="auto">
         <source src="assets/hero-bg-video.mp4" type="video/mp4" />
-        <img src="assets/hero-bg(1).png" alt="Royal Wedding Background" class="w-full h-full object-cover object-center" />
+        <picture>
+          <source srcset="assets/hero-bg(1).webp" type="image/webp" />
+          <img src="assets/hero-bg(1).png" alt="Royal Wedding Background" class="w-full h-full object-cover object-center" />
+        </picture>
       </video>
       <div class="absolute inset-0 bg-white/10"></div>
     </div>
@@ -305,9 +319,13 @@
         <div class="relative z-10 flex flex-col items-center gap-1 sm:gap-2" style="padding:8px 0 6px;">
           <div class="w-[72px] h-[72px] sm:w-[96px] sm:h-[96px] royal-gold-frame">
             <div class="w-full h-full rounded-full overflow-hidden">
-              <img src="assets/groom.png?v=3" alt="Groom Shagun"
-                   class="w-full h-full object-cover"
-                   style="object-position: center 15%;" />
+              <picture>
+                <source srcset="assets/groom.webp?v=6.0" type="image/webp" />
+                <img src="assets/groom.png?v=6.0" alt="Groom Shagun"
+                     class="w-full h-full object-cover"
+                     style="object-position: center 20%;"
+                     fetchpriority="high" />
+              </picture>
             </div>
           </div>
           <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.2em] font-bold text-black/50 font-sans">Groom</span>
@@ -316,7 +334,7 @@
         <!-- Thin gold divider -->
         <div class="flex flex-col items-center gap-1 z-10 pb-3 sm:pb-4">
           <div style="width:1px;" class="h-[20px] sm:h-[28px] bg-gradient-to-b from-transparent via-[#C5A059]/50 to-transparent"></div>
-          <span class="font-cursive text-[#C5A059] text-base sm:text-lg leading-none">&</span>
+          <span class="font-cursive text-[#C5A059] text-base sm:text-lg leading-none">&amp;</span>
           <div style="width:1px;" class="h-[20px] sm:h-[28px] bg-gradient-to-b from-transparent via-[#C5A059]/50 to-transparent"></div>
         </div>
 
@@ -324,9 +342,13 @@
         <div class="relative z-10 flex flex-col items-center gap-1 sm:gap-2" style="padding:8px 0 6px;">
           <div class="w-[72px] h-[72px] sm:w-[96px] sm:h-[96px] royal-gold-frame">
             <div class="w-full h-full rounded-full overflow-hidden">
-              <img src="assets/bride.png?v=3" alt="Bride Chakshu"
-                   class="w-full h-full object-cover"
-                   style="object-position: center 10%;" />
+              <picture>
+                <source srcset="assets/bride.webp?v=6.0" type="image/webp" />
+                <img src="assets/bride.png?v=6.0" alt="Bride Chakshu"
+                     class="w-full h-full object-cover"
+                     style="object-position: center 12%;"
+                     fetchpriority="high" />
+              </picture>
             </div>
           </div>
           <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.2em] font-bold text-black/50 font-sans">Bride</span>
@@ -397,8 +419,14 @@
   <!-- EVENTS SCHEDULE SECTION - MINIMALIST WHITE BACKGROUND WITH CORNER FLOWERS -->
   <section id="events" class="py-20 px-4 sm:px-8 bg-white relative z-10 border-t border-b border-[#E5E5EA] overflow-hidden">
     <!-- Corner Floral Decorations -->
-    <img src="assets/flower.png" alt="" class="absolute top-0 left-0 w-28 sm:w-40 md:w-48 opacity-90 pointer-events-none select-none z-0 transform scale-y-[-1]" />
-    <img src="assets/flower.png" alt="" class="absolute bottom-0 right-0 w-28 sm:w-40 md:w-48 opacity-90 pointer-events-none select-none z-0 transform scale-x-[-1]" />
+    <picture>
+      <source srcset="assets/flower.webp" type="image/webp" />
+      <img src="assets/flower.png" alt="" class="absolute top-0 left-0 w-28 sm:w-40 md:w-48 opacity-90 pointer-events-none select-none z-0 transform scale-y-[-1]" loading="lazy" />
+    </picture>
+    <picture>
+      <source srcset="assets/flower.webp" type="image/webp" />
+      <img src="assets/flower.png" alt="" class="absolute bottom-0 right-0 w-28 sm:w-40 md:w-48 opacity-90 pointer-events-none select-none z-0 transform scale-x-[-1]" loading="lazy" />
+    </picture>
     
     <div class="max-w-4xl mx-auto space-y-12 relative z-10">
       
@@ -415,155 +443,155 @@
         <div class="absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-[1px] bg-royal-gold/25 z-0"></div>
         
         <!-- 1. Shagun Ceremony (Left Side) -->
-        <div class="relative w-[45%] self-start rounded-2xl bg-white border border-royal-gold/25 shadow-[0_8px_30px_rgba(197,160,89,0.06)] hover:scale-[1.02] hover:border-royal-gold/45 hover:shadow-[0_12px_35px_rgba(197,160,89,0.1)] transition-all duration-300 p-3.5 sm:p-6 md:p-8 scroll-reveal z-10">
+        <div class="relative w-[45%] self-start rounded-2xl bg-white border border-royal-gold/25 shadow-[0_8px_30px_rgba(197,160,89,0.06)] hover:scale-[1.02] hover:border-royal-gold/45 hover:shadow-[0_12px_35px_rgba(197,160,89,0.1)] transition-all duration-300 p-3 sm:p-5 md:p-7 scroll-reveal z-10">
           <!-- Desktop & Mobile Timeline Center Node -->
           <div class="absolute top-1/2 -translate-y-1/2 right-[-18px] md:right-[-24px] w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-royal-gold border border-white z-20"></div>
 
-          <div class="space-y-2 md:space-y-3">
+          <div class="space-y-1.5 md:space-y-2.5">
             <!-- Event Badge Index -->
-            <div class="flex items-center gap-2">
-              <span class="font-sans text-[7.5px] sm:text-[8px] uppercase tracking-[0.2em] text-royal-gold font-bold">✦ AUSPICIOUS BEGINNING ✦</span>
+            <div class="flex items-center">
+              <span class="font-sans text-[7px] sm:text-[8px] uppercase tracking-[0.12em] text-royal-gold font-bold whitespace-nowrap">✦ SHAGUN RITUAL ✦</span>
             </div>
             <!-- Event Title -->
-            <h3 class="font-serif text-base sm:text-lg md:text-2xl font-light text-black tracking-wide leading-tight">Shagun Ceremony</h3>
+            <h3 class="font-serif text-sm sm:text-lg md:text-2xl font-light text-black tracking-wide leading-tight">Shagun Ceremony</h3>
             <!-- Event Subtitle/Quote -->
-            <p class="font-serif italic text-[10px] sm:text-xs text-charcoal-muted leading-relaxed mt-0.5">Auspicious wedding initiation &amp; sacred shagun rituals.</p>
+            <p class="font-serif italic text-[9.5px] sm:text-xs text-charcoal-muted leading-relaxed">Auspicious wedding initiation &amp; sacred rituals.</p>
             
-            <div class="h-[1px] bg-gray-100 my-1.5 md:my-2"></div>
+            <div class="h-[1px] bg-gray-100 my-1 md:my-2"></div>
             
             <!-- Details Row (Ticket Style) -->
             <div class="space-y-1 text-[9px] sm:text-xs text-charcoal/80 font-sans tracking-wide">
               <div class="flex items-center justify-between gap-1">
-                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold">WHEN</span>
-                <span class="font-medium text-black text-[10px] sm:text-xs">Nov 23 • 11:00 AM</span>
+                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold shrink-0">WHEN</span>
+                <span class="font-medium text-black text-[9.5px] sm:text-xs text-right">Nov 23 • 11:00 AM</span>
               </div>
               <div class="flex items-center justify-between gap-1">
-                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold">WHERE</span>
-                <span class="font-medium text-black text-[10px] sm:text-xs truncate max-w-[70%]">Residence, Diyada</span>
+                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold shrink-0">WHERE</span>
+                <span class="font-medium text-black text-[9.5px] sm:text-xs text-right">Residence</span>
               </div>
             </div>
           </div>
         </div>
 
         <!-- 2. Samoohat & Haldi Ceremony (Right Side) -->
-        <div class="relative w-[45%] self-end rounded-2xl bg-white border border-royal-gold/25 shadow-[0_8px_30px_rgba(197,160,89,0.06)] hover:scale-[1.02] hover:border-royal-gold/45 hover:shadow-[0_12px_35px_rgba(197,160,89,0.1)] transition-all duration-300 p-3.5 sm:p-6 md:p-8 scroll-reveal z-10">
+        <div class="relative w-[45%] self-end rounded-2xl bg-white border border-royal-gold/25 shadow-[0_8px_30px_rgba(197,160,89,0.06)] hover:scale-[1.02] hover:border-royal-gold/45 hover:shadow-[0_12px_35px_rgba(197,160,89,0.1)] transition-all duration-300 p-3 sm:p-5 md:p-7 scroll-reveal z-10">
           <!-- Desktop & Mobile Timeline Center Node -->
           <div class="absolute top-1/2 -translate-y-1/2 left-[-18px] md:left-[-24px] w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-royal-gold border border-white z-20"></div>
 
-          <div class="space-y-2 md:space-y-3">
+          <div class="space-y-1.5 md:space-y-2.5">
             <!-- Event Badge Index -->
-            <div class="flex items-center gap-2">
-              <span class="font-sans text-[7.5px] sm:text-[8px] uppercase tracking-[0.2em] text-royal-gold font-bold">✦ SACRED RITUALS ✦</span>
+            <div class="flex items-center">
+              <span class="font-sans text-[7px] sm:text-[8px] uppercase tracking-[0.12em] text-royal-gold font-bold whitespace-nowrap">✦ SAMOOHAT &amp; HALDI ✦</span>
             </div>
             <!-- Event Title -->
-            <h3 class="font-serif text-base sm:text-lg md:text-2xl font-light text-black tracking-wide leading-tight">Samoohat &amp; Haldi</h3>
+            <h3 class="font-serif text-sm sm:text-lg md:text-2xl font-light text-black tracking-wide leading-tight">Samoohat &amp; Haldi</h3>
             <!-- Event Subtitle/Quote -->
-            <p class="font-serif italic text-[10px] sm:text-xs text-charcoal-muted leading-relaxed mt-0.5">Holy Samoohat prayers &amp; vibrant turmeric blessings.</p>
+            <p class="font-serif italic text-[9.5px] sm:text-xs text-charcoal-muted leading-relaxed">Holy prayers &amp; vibrant turmeric blessings.</p>
             
-            <div class="h-[1px] bg-gray-100 my-1.5 md:my-2"></div>
+            <div class="h-[1px] bg-gray-100 my-1 md:my-2"></div>
             
             <!-- Details Row (Ticket Style) -->
             <div class="space-y-1 text-[9px] sm:text-xs text-charcoal/80 font-sans tracking-wide">
-              <div class="flex items-center justify-between gap-1">
-                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold">WHEN</span>
-                <span class="font-medium text-black text-[10px] sm:text-xs">Nov 24 • 10:00 AM &amp; 12:00 PM</span>
+              <div class="flex items-start justify-between gap-1">
+                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold shrink-0 pt-0.5">WHEN</span>
+                <span class="font-medium text-black text-[9.5px] sm:text-xs text-right">Nov 24 • 10 AM &amp; 12 PM</span>
               </div>
               <div class="flex items-center justify-between gap-1">
-                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold">WHERE</span>
-                <span class="font-medium text-black text-[10px] sm:text-xs truncate max-w-[70%]">Courtyard Lawns</span>
+                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold shrink-0">WHERE</span>
+                <span class="font-medium text-black text-[9.5px] sm:text-xs text-right">Residence</span>
               </div>
             </div>
           </div>
         </div>
 
         <!-- 3. Saanjh & Maiyan (Left Side) -->
-        <div class="relative w-[45%] self-start rounded-2xl bg-white border border-royal-gold/25 shadow-[0_8px_30px_rgba(197,160,89,0.06)] hover:scale-[1.02] hover:border-royal-gold/45 hover:shadow-[0_12px_35px_rgba(197,160,89,0.1)] transition-all duration-300 p-3.5 sm:p-6 md:p-8 scroll-reveal z-10">
+        <div class="relative w-[45%] self-start rounded-2xl bg-white border border-royal-gold/25 shadow-[0_8px_30px_rgba(197,160,89,0.06)] hover:scale-[1.02] hover:border-royal-gold/45 hover:shadow-[0_12px_35px_rgba(197,160,89,0.1)] transition-all duration-300 p-3 sm:p-5 md:p-7 scroll-reveal z-10">
           <!-- Desktop & Mobile Timeline Center Node -->
           <div class="absolute top-1/2 -translate-y-1/2 right-[-18px] md:right-[-24px] w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-royal-gold border border-white z-20"></div>
 
-          <div class="space-y-2 md:space-y-3">
+          <div class="space-y-1.5 md:space-y-2.5">
             <!-- Event Badge Index -->
-            <div class="flex items-center gap-2">
-              <span class="font-sans text-[7.5px] sm:text-[8px] uppercase tracking-[0.2em] text-royal-gold font-bold">✦ MUSIC &amp; CELEBRATION ✦</span>
+            <div class="flex items-center">
+              <span class="font-sans text-[7px] sm:text-[8px] uppercase tracking-[0.12em] text-royal-gold font-bold whitespace-nowrap">✦ SAANJH &amp; MAIYAN ✦</span>
             </div>
             <!-- Event Title -->
-            <h3 class="font-serif text-base sm:text-lg md:text-2xl font-light text-black tracking-wide leading-tight">Saanjh &amp; Maiyan</h3>
+            <h3 class="font-serif text-sm sm:text-lg md:text-2xl font-light text-black tracking-wide leading-tight">Saanjh &amp; Maiyan</h3>
             <!-- Event Subtitle/Quote -->
-            <p class="font-serif italic text-[10px] sm:text-xs text-charcoal-muted leading-relaxed mt-0.5">An evening of folk songs, saanjh and joyful maiyan.</p>
+            <p class="font-serif italic text-[9.5px] sm:text-xs text-charcoal-muted leading-relaxed">Folk songs, saanjh and joyful maiyan rituals.</p>
             
-            <div class="h-[1px] bg-gray-100 my-1.5 md:my-2"></div>
+            <div class="h-[1px] bg-gray-100 my-1 md:my-2"></div>
             
             <!-- Details Row (Ticket Style) -->
             <div class="space-y-1 text-[9px] sm:text-xs text-charcoal/80 font-sans tracking-wide">
-              <div class="flex items-center justify-between gap-1">
-                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold">WHEN</span>
-                <span class="font-medium text-black text-[10px] sm:text-xs">Nov 24 • 04:00 PM &amp; 07:00 PM</span>
+              <div class="flex items-start justify-between gap-1">
+                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold shrink-0 pt-0.5">WHEN</span>
+                <span class="font-medium text-black text-[9.5px] sm:text-xs text-right">Nov 24 • 04 PM &amp; 07 PM</span>
               </div>
               <div class="flex items-center justify-between gap-1">
-                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold">WHERE</span>
-                <span class="font-medium text-black text-[10px] sm:text-xs truncate max-w-[70%]">Celebration Lawns</span>
+                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold shrink-0">WHERE</span>
+                <span class="font-medium text-black text-[9.5px] sm:text-xs text-right">Residence</span>
               </div>
             </div>
           </div>
         </div>
 
         <!-- 4. Preeti Bhoj, Sehra Bandi & Baraat (Right Side) -->
-        <div class="relative w-[45%] self-end rounded-2xl bg-white border border-royal-gold/25 shadow-[0_8px_30px_rgba(197,160,89,0.06)] hover:scale-[1.02] hover:border-royal-gold/45 hover:shadow-[0_12px_35px_rgba(197,160,89,0.1)] transition-all duration-300 p-3.5 sm:p-6 md:p-8 scroll-reveal z-10">
+        <div class="relative w-[45%] self-end rounded-2xl bg-white border border-royal-gold/25 shadow-[0_8px_30px_rgba(197,160,89,0.06)] hover:scale-[1.02] hover:border-royal-gold/45 hover:shadow-[0_12px_35px_rgba(197,160,89,0.1)] transition-all duration-300 p-3 sm:p-5 md:p-7 scroll-reveal z-10">
           <!-- Desktop & Mobile Timeline Center Node -->
           <div class="absolute top-1/2 -translate-y-1/2 left-[-18px] md:left-[-24px] w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-royal-gold border border-white z-20"></div>
 
-          <div class="space-y-2 md:space-y-3">
+          <div class="space-y-1.5 md:space-y-2.5">
             <!-- Event Badge Index -->
-            <div class="flex items-center gap-2">
-              <span class="font-sans text-[7.5px] sm:text-[8px] uppercase tracking-[0.2em] text-royal-gold font-bold">✦ ROYAL PROCESSION ✦</span>
+            <div class="flex items-center">
+              <span class="font-sans text-[7px] sm:text-[8px] uppercase tracking-[0.12em] text-royal-gold font-bold whitespace-nowrap">✦ BARAAT PROCESSION ✦</span>
             </div>
             <!-- Event Title -->
-            <h3 class="font-serif text-base sm:text-lg md:text-2xl font-light text-black tracking-wide leading-tight">Preeti Bhoj &amp; Baraat</h3>
+            <h3 class="font-serif text-sm sm:text-lg md:text-2xl font-light text-black tracking-wide leading-tight">Preeti Bhoj &amp; Baraat</h3>
             <!-- Event Subtitle/Quote -->
-            <p class="font-serif italic text-[10px] sm:text-xs text-charcoal-muted leading-relaxed mt-0.5">Preeti Bhoj feast, sehra bandi &amp; royal baraat departure.</p>
+            <p class="font-serif italic text-[9.5px] sm:text-xs text-charcoal-muted leading-relaxed">Feast, sehra bandi &amp; royal baraat departure.</p>
             
-            <div class="h-[1px] bg-gray-100 my-1.5 md:my-2"></div>
+            <div class="h-[1px] bg-gray-100 my-1 md:my-2"></div>
             
             <!-- Details Row (Ticket Style) -->
             <div class="space-y-1 text-[9px] sm:text-xs text-charcoal/80 font-sans tracking-wide">
-              <div class="flex items-center justify-between gap-1">
-                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold">WHEN</span>
-                <span class="font-medium text-black text-[10px] sm:text-xs">Nov 25 • 12:30 PM &amp; 06:00 PM</span>
+              <div class="flex items-start justify-between gap-1">
+                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold shrink-0 pt-0.5">WHEN</span>
+                <span class="font-medium text-black text-[9.5px] sm:text-xs text-right">Nov 25 • 12:30 &amp; 06 PM</span>
               </div>
               <div class="flex items-center justify-between gap-1">
-                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold">WHERE</span>
-                <span class="font-medium text-black text-[10px] sm:text-xs truncate max-w-[70%]">Residence &amp; Khabli</span>
+                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold shrink-0">WHERE</span>
+                <span class="font-medium text-black text-[9.5px] sm:text-xs text-right">Residence</span>
               </div>
             </div>
           </div>
         </div>
 
         <!-- 5. Vadhu Pravesh & Dhaam (Left Side) -->
-        <div class="relative w-[45%] self-start rounded-2xl bg-white border border-royal-gold/25 shadow-[0_8px_30px_rgba(197,160,89,0.06)] hover:scale-[1.02] hover:border-royal-gold/45 hover:shadow-[0_12px_35px_rgba(197,160,89,0.1)] transition-all duration-300 p-3.5 sm:p-6 md:p-8 scroll-reveal z-10">
+        <div class="relative w-[45%] self-start rounded-2xl bg-white border border-royal-gold/25 shadow-[0_8px_30px_rgba(197,160,89,0.06)] hover:scale-[1.02] hover:border-royal-gold/45 hover:shadow-[0_12px_35px_rgba(197,160,89,0.1)] transition-all duration-300 p-3 sm:p-5 md:p-7 scroll-reveal z-10">
           <!-- Desktop & Mobile Timeline Center Node -->
           <div class="absolute top-1/2 -translate-y-1/2 right-[-18px] md:right-[-24px] w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-royal-gold border border-white z-20"></div>
 
-          <div class="space-y-2 md:space-y-3">
+          <div class="space-y-1.5 md:space-y-2.5">
             <!-- Event Badge Index -->
-            <div class="flex items-center gap-2">
-              <span class="font-sans text-[7.5px] sm:text-[8px] uppercase tracking-[0.2em] text-royal-gold font-bold">✦ WELCOMING THE BRIDE ✦</span>
+            <div class="flex items-center">
+              <span class="font-sans text-[7px] sm:text-[8px] uppercase tracking-[0.12em] text-royal-gold font-bold whitespace-nowrap">✦ VADHU PRAVESH &amp; DHAAM ✦</span>
             </div>
             <!-- Event Title -->
-            <h3 class="font-serif text-base sm:text-lg md:text-2xl font-light text-black tracking-wide leading-tight">Vadhu Pravesh &amp; Dhaam</h3>
+            <h3 class="font-serif text-sm sm:text-lg md:text-2xl font-light text-black tracking-wide leading-tight">Vadhu Pravesh &amp; Dhaam</h3>
             <!-- Event Subtitle/Quote -->
-            <p class="font-serif italic text-[10px] sm:text-xs text-charcoal-muted leading-relaxed mt-0.5">Homecoming of the bride &amp; authentic Himachali Dhaam.</p>
+            <p class="font-serif italic text-[9.5px] sm:text-xs text-charcoal-muted leading-relaxed">Homecoming of bride &amp; traditional Dhaam.</p>
             
-            <div class="h-[1px] bg-gray-100 my-1.5 md:my-2"></div>
+            <div class="h-[1px] bg-gray-100 my-1 md:my-2"></div>
             
             <!-- Details Row (Ticket Style) -->
             <div class="space-y-1 text-[9px] sm:text-xs text-charcoal/80 font-sans tracking-wide">
-              <div class="flex items-center justify-between gap-1">
-                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold">WHEN</span>
-                <span class="font-medium text-black text-[10px] sm:text-xs">Nov 26 • 08:00 AM &amp; 12:30 PM</span>
+              <div class="flex items-start justify-between gap-1">
+                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold shrink-0 pt-0.5">WHEN</span>
+                <span class="font-medium text-black text-[9.5px] sm:text-xs text-right">Nov 26 • 08 AM &amp; 12:30 PM</span>
               </div>
               <div class="flex items-center justify-between gap-1">
-                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold">WHERE</span>
-                <span class="font-medium text-black text-[10px] sm:text-xs truncate max-w-[70%]">Residence, Diyada</span>
+                <span class="text-[7px] uppercase tracking-wider text-royal-gold font-bold shrink-0">WHERE</span>
+                <span class="font-medium text-black text-[9.5px] sm:text-xs text-right">Residence</span>
               </div>
             </div>
           </div>
@@ -587,10 +615,10 @@
       <div class="relative max-w-md mx-auto scroll-reveal">
         
         <!-- Grid Container for Groom & Bride (2 boxes in one line with minimum gap) -->
-        <div class="grid grid-cols-2 gap-2 sm:gap-3 relative items-stretch">
+        <div class="grid grid-cols-2 gap-2.5 sm:gap-4 relative items-stretch">
           
           <!-- LEFT BOX: GROOM -->
-          <div onclick="openLightbox('assets/groom.png?v=3', 'Groom — Shagun Thakur')"
+          <div onclick="openLightbox('assets/groom.webp?v=6.0', 'Groom — Shagun Thakur')"
                class="group relative rounded-2xl sm:rounded-3xl overflow-hidden border border-royal-gold/35 bg-white shadow-[0_8px_25px_rgba(197,160,89,0.12)] cursor-pointer transition-all duration-300 hover:border-royal-gold hover:shadow-[0_12px_30px_rgba(197,160,89,0.22)] active:scale-[0.98]">
             
             <!-- Inner Gold Card Border Frame -->
@@ -598,21 +626,25 @@
             
             <!-- Image with smooth hover zoom -->
             <div class="relative aspect-[3/4] w-full overflow-hidden bg-[#FAF9F6]">
-              <img src="assets/groom.png?v=3" alt="Groom Shagun"
-                   class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                   style="object-position: center 15%;" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+              <picture>
+                <source srcset="assets/groom.webp?v=6.0" type="image/webp" />
+                <img src="assets/groom.png?v=6.0" alt="Groom Shagun"
+                     class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                     style="object-position: center 20%;"
+                     loading="lazy" />
+              </picture>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent pointer-events-none"></div>
             </div>
 
             <!-- Bottom Floating Tag Label -->
             <div class="absolute bottom-2.5 inset-x-2 z-10 text-center">
-              <span class="text-[7.5px] sm:text-[9px] uppercase tracking-[0.2em] font-bold text-amber-200 block drop-shadow-xs">GROOM</span>
-              <h4 class="font-serif text-xs sm:text-base text-white font-medium tracking-wide drop-shadow-xs">Shagun</h4>
+              <span class="text-[7.5px] sm:text-[9px] uppercase tracking-[0.2em] font-bold text-amber-200 block drop-shadow-sm">GROOM</span>
+              <h4 class="font-serif text-xs sm:text-base text-white font-medium tracking-wide drop-shadow-sm">Shagun</h4>
             </div>
           </div>
 
           <!-- RIGHT BOX: BRIDE -->
-          <div onclick="openLightbox('assets/bride.png?v=3', 'Bride — Chakshu Guleria')"
+          <div onclick="openLightbox('assets/bride.webp?v=6.0', 'Bride — Chakshu Guleria')"
                class="group relative rounded-2xl sm:rounded-3xl overflow-hidden border border-royal-gold/35 bg-white shadow-[0_8px_25px_rgba(197,160,89,0.12)] cursor-pointer transition-all duration-300 hover:border-royal-gold hover:shadow-[0_12px_30px_rgba(197,160,89,0.22)] active:scale-[0.98]">
             
             <!-- Inner Gold Card Border Frame -->
@@ -620,16 +652,20 @@
             
             <!-- Image with smooth hover zoom -->
             <div class="relative aspect-[3/4] w-full overflow-hidden bg-[#FAF9F6]">
-              <img src="assets/bride.png?v=3" alt="Bride Chakshu"
-                   class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                   style="object-position: center 10%;" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+              <picture>
+                <source srcset="assets/bride.webp?v=6.0" type="image/webp" />
+                <img src="assets/bride.png?v=6.0" alt="Bride Chakshu"
+                     class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                     style="object-position: center 12%;"
+                     loading="lazy" />
+              </picture>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent pointer-events-none"></div>
             </div>
 
             <!-- Bottom Floating Tag Label -->
             <div class="absolute bottom-2.5 inset-x-2 z-10 text-center">
-              <span class="text-[7.5px] sm:text-[9px] uppercase tracking-[0.2em] font-bold text-amber-200 block drop-shadow-xs">BRIDE</span>
-              <h4 class="font-serif text-xs sm:text-base text-white font-medium tracking-wide drop-shadow-xs">Chakshu</h4>
+              <span class="text-[7.5px] sm:text-[9px] uppercase tracking-[0.2em] font-bold text-amber-200 block drop-shadow-sm">BRIDE</span>
+              <h4 class="font-serif text-xs sm:text-base text-white font-medium tracking-wide drop-shadow-sm">Chakshu</h4>
             </div>
           </div>
 
@@ -637,7 +673,7 @@
 
         <!-- CENTER "MILAN" EMBLEM AT THE JUNCTION -->
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
-          <div class="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white/95 backdrop-blur-md border border-royal-gold shadow-[0_6px_25px_rgba(197,160,89,0.35)] flex flex-col items-center justify-center text-center transform transition-transform hover:scale-110">
+          <div class="w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-white/95 backdrop-blur-md border border-royal-gold shadow-[0_6px_25px_rgba(197,160,89,0.35)] flex flex-col items-center justify-center text-center transform transition-transform hover:scale-110">
             <span class="text-[#C5A059] text-[9px] sm:text-xs leading-none">✦</span>
             <span class="font-cursive text-royal-gold text-sm sm:text-xl font-medium leading-none -my-0.5">&amp;</span>
             <span class="text-[6.5px] sm:text-[8px] uppercase tracking-[0.18em] text-royal-green font-bold leading-none">MILAN</span>
@@ -659,8 +695,14 @@
   <!-- SHAHI PARIVAAR / ROYAL HOSTS & FAMILY BLESSINGS SECTION (Minimalist White Theme) -->
   <section id="hosts" class="py-20 px-4 sm:px-8 bg-white text-charcoal relative z-10 border-b border-[#E5E5EA] overflow-hidden">
     <!-- Corner Floral Decorations -->
-    <img src="assets/flower.png" alt="" class="absolute top-0 left-0 w-28 sm:w-40 md:w-48 opacity-90 pointer-events-none select-none z-0 transform scale-y-[-1]" />
-    <img src="assets/flower.png" alt="" class="absolute bottom-0 right-0 w-28 sm:w-40 md:w-48 opacity-90 pointer-events-none select-none z-0 transform scale-x-[-1]" />
+    <picture>
+      <source srcset="assets/flower.webp" type="image/webp" />
+      <img src="assets/flower.png" alt="" class="absolute top-0 left-0 w-28 sm:w-40 md:w-48 opacity-90 pointer-events-none select-none z-0 transform scale-y-[-1]" loading="lazy" />
+    </picture>
+    <picture>
+      <source srcset="assets/flower.webp" type="image/webp" />
+      <img src="assets/flower.png" alt="" class="absolute bottom-0 right-0 w-28 sm:w-40 md:w-48 opacity-90 pointer-events-none select-none z-0 transform scale-x-[-1]" loading="lazy" />
+    </picture>
 
     <div class="max-w-3xl mx-auto space-y-10 text-center relative z-10">
       
@@ -819,6 +861,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=4.2"></script>
+  <script src="script.js?v=5.0"></script>
 </body>
 </html>

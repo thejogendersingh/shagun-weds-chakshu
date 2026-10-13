@@ -932,3 +932,4 @@ setTimeout(() => {
   updateGalleryCarouselUI();
   resetCarouselTimer();
 }, 200);
+
